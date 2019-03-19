@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <div class="main">
-      <PostList></PostList>
+      <router-view name="main"></router-view>
     </div>
   </div>
 </template>
@@ -20,11 +20,15 @@
 </script>
 <style lang="scss">
   #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,sans-serif!important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background: #ddd;
+  }
+  .main{
+    width: 80%;
+    margin: 0 auto;
   }
   /*body{background: #ddd;}*/
   * {

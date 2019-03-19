@@ -2,10 +2,10 @@
   <div class="PostList">
     <!--正在加载-->
     <div class="loading" v-if="isLoading">
-      <img src="../assets/giphy.gif" alt="">
+      <img src="../assets/loading.gif" alt="">
     </div>
     <!--主体架构-->
-    <div class="posts">
+    <div class="posts" v-else>
       <ul>
         <div class="toobar">
           <span>全部</span>
@@ -24,7 +24,9 @@
               {{list | tabFormatter}}
             </span>
           </span>
-          <span>{{list.title}}</span>
+          <router-link :to="{name:'post_content',params: {id: list.id}}">
+            <span>{{list.title}}</span>
+          </router-link>
           <span class="last_reply">{{list.last_reply_at | formatDate}}</span>
         </li>
       </ul>
@@ -55,7 +57,7 @@
           this.isLoading = false
           this.lists = res.data.data
         }).catch(err => {
-          console.log('请求数据失败')
+          console.log('请求数据失败:',err)
         })
       }
     }
