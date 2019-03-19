@@ -66,6 +66,11 @@
     beforeMount(){
       this.isLoading =true;
       this.getArticleData();
+    },
+    watch: {
+      '$route' (to, from) {
+        this.getArticleData()
+      }
     }
   }
 </script>

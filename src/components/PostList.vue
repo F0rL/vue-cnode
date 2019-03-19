@@ -19,12 +19,12 @@
           <span class="allcount">
             <span class="reply_count">{{list.visit_count}}/{{list.reply_count}}</span>
           </span>
-          <span :class="{put_good: list.good, put_top: list.top, 'topiclist-tab': (list.good != true && list.top != true)}">
+          <span :class="{put_good: list.good, put_top: list.top, 'topiclist-tab': (list.good === false && list.top === false)}">
             <span>
               {{list | tabFormatter}}
             </span>
           </span>
-          <router-link :to="{name:'post_content',params: {id: list.id}}">
+          <router-link :to="{name:'post_content',params: {id: list.id,name: list.author.loginname}}">
             <span>{{list.title}}</span>
           </router-link>
           <span class="last_reply">{{list.last_reply_at | formatDate}}</span>
@@ -54,7 +54,7 @@
           page: 1,
           limit: 20
         }).then(res => {
-          this.isLoading = false
+          this.isLoading = false;
           this.lists = res.data.data
         }).catch(err => {
           console.log('请求数据失败:',err)
