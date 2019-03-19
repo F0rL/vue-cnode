@@ -2,7 +2,7 @@
   <div class="article">
     <!--如果正在加载显示此div-->
     <div class="loading" v-if="isLoading">
-      <img src="../assets/loading.gif" >
+      <img src="../assets/loading.gif" alt="" >
     </div>
     <div v-else>
       <div class="topic_header">
@@ -21,7 +21,7 @@
         <div class="topbar">{{post.reply_count}} 回复</div>
         <div  class="replySec" v-for="(reply, index) in post.replies" :key="reply.id">
           <div class="replyUp">
-            <router-link :to="{name:user_info,params:{id: reply.id}}">
+            <router-link :to="{name:'user_info',params:{name: reply.author.loginname}}">
               <img :src="reply.author.avatar_url" alt="">
             </router-link>
             <router-link>
@@ -53,7 +53,7 @@
       getArticleData(){
         this.$http.get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
           .then(res=>{
-            if(res.data.success == true){
+            if(res.data.success === true){
               this.isLoading =false;
               this.post = res.data.data;
             }
