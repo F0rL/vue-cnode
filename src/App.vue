@@ -27,8 +27,11 @@
     background: #ddd;
   }
   .main{
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
+    min-width: 960px;
+    margin: 15px auto;
+    min-height: 400px;
   }
   /*body{background: #ddd;}*/
   * {

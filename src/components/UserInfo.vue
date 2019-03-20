@@ -89,7 +89,7 @@
     margin: 0;
   }
   .userInfomation > div >ul > li {
-    padding: 4px 0 4px 12px;
+    padding: 10px 0 10px 12px;
     white-space: nowrap;
     font-size: 0.72rem;
     text-overflow: ellipsis;
@@ -98,7 +98,19 @@
     vertical-align: middle;
   }
   .userInfomation > div >ul > li > a {
+    margin-left: 10px;
     color: #094E99;
     text-decoration: none;
+    font-size: 16px;
+  }
+  .userInfomation > div >ul > li > a:hover {
+    color: #005580;
+    border-bottom: 1px solid #005580;
+  }
+  section > span {
+    margin-left: 10px;
+  }
+  section > p {
+    margin-top: 10px;
   }
 </style>

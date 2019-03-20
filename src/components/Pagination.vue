@@ -69,6 +69,7 @@
   .pagination {
     margin-top: 5px;
     margin-bottom: 20px;
+    margin-left:  0;
     background-color: white;
     padding: 6px 20px;
     border-radius: 5px;

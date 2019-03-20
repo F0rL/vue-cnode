@@ -3,12 +3,15 @@
     <router-link :to="{name: 'root'}">
       <img src="../assets/cnodejs_light.svg" alt="">
     </router-link>
-    <ul>
-      <li><a href="#">首页</a></li>
+    <ul class="nav">
+      <router-link :to="{name: 'root'}">
+        <li><a href="#">首页</a></li>
+      </router-link>
       <li><a href="#">新手入门</a></li>
       <li><a href="#">API</a></li>
       <li><a href="#">关于</a></li>
       <li><a href="#">注册</a></li>
+      <li><a href="#">登录</a></li>
     </ul>
   </div>
 </template>
@@ -21,18 +24,20 @@
 
 <style scoped>
   .header{
-    background-color:#5a5555 ;
+    background-color:#444 ;
     height: 50px;
   }
   img{
     max-width: 120px;
-    margin-left: 50px;
+    margin-left: 90px;
     margin-top: 10px;
   }
   ul{
     list-style: none;
     float: right;
-    margin: 4px;
+  }
+  .nav {
+    margin: 5px 80px 0 0;
   }
   li{
     display: inline-block;

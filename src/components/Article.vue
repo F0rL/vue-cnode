@@ -24,12 +24,12 @@
             <router-link :to="{name:'user_info',params:{name: reply.author.loginname}}">
               <img :src="reply.author.avatar_url" alt="">
             </router-link>
-            <router-link>
+            <router-link :to="{name:'user_info',params:{name: reply.author.loginname}}">
               <span>{{reply.author.loginname}}</span>
             </router-link>
             <a>{{index+1}}楼•{{reply.create_at | formatDate}}</a>
-            <span v-if="reply.ups.length>0">{{reply.ups.length}}</span>
-            <span v-else></span>
+            <!--<span v-if="reply.ups.length>0">{{reply.ups.length}}</span>-->
+            <!--<span v-else></span>-->
           </div>
           <div class="replay_content">
             <p v-html="reply.content"></p>

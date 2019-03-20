@@ -1,18 +1,47 @@
 <template>
   <div class="PostList">
+    <div class="sidebar">
+      <div class="panel">
+        <div class="inner">
+          <p>CNode：Node.js专业中文社区</p>
+          <p>您可以<a>登录</a> 或 <a>注册</a> , 也可以</p>
+          <button>通过 GitHub 登录</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="inner ads">
+          <a href="https://www.aliyun.com/product/nodejs?ref=cnode" target="_blank" class="banner sponsor_outlink" data-label="alinode">
+            <img src="//static.cnodejs.org/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+          </a>
+          <div class="sep10"></div>
+          <a href="https://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&amp;utm_medium=content_pic_pc_540_130&amp;utm_campaign=huodong&amp;utm_content=gift&amp;ytag=cnodejs" target="_blank" class="banner sponsor_outlink" data-label="ucloud-banner">
+            <img src="//static.cnodejs.org/FlajCCXkxZaOsuWp3k0iaiqfrJaS">
+          </a>
+          <div class="sep10"></div>
+          <a href="https://0x7.me/T4BdE" target="_blank" class="banner sponsor_outlink" data-label="qiniu-sidebar">
+            <img src="//static.cnodejs.org/FvSQHGgGVh_tkomqIFQ0MDEH9wrg">
+          </a>
+          <div class="sep10"></div>
+          <a href="https://jobs.aftership.com/r/cnodejs" target="_blank" class="banner sponsor_outlink" data-label="aftership">
+            <img src="//static.cnodejs.org/FjpEWk5hZd8DToyHKDbJ4masolIW">
+          </a>
+        </div>
+      </div>
+    </div>
     <!--正在加载-->
     <div class="loading" v-if="isLoading">
       <img src="../assets/loading.gif" alt="">
     </div>
     <!--主体架构-->
     <div class="posts" v-else>
-      <ul>
+      <ul class="content">
         <div class="toobar">
           <span>全部</span>
           <span>精华</span>
           <span>分享</span>
           <span>问答</span>
           <span>招聘</span>
+          <span>客户端测试</span>
         </div>
         <li v-for="list in lists" :key="list.id">
           <img :src="list.author.avatar_url" alt="">
@@ -34,6 +63,7 @@
         </li>
       </ul>
     </div>
+
   </div>
 </template>
 
@@ -83,9 +113,31 @@
   }
   .posts {
     margin-top: 10px;
+    margin-right: 310px;
+  }
+  .sidebar {
+    width: 290px;
+    float: right;
+  }
+  .panel .inner {
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background-color: #fff;
+  }
+  .panel .inner a {
+    cursor: pointer;
+  }
+  .panel button {
+    background: #5bc0de;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+  }
+  .panel button:hover {
+    background: #2f96b4;
   }
 
-  .PostList img {
+  .PostList .posts img {
     height: 30px;
     width: 30px;
     vertical-align: middle;
@@ -176,6 +228,7 @@
     color: #80bd01;
     line-height: 40px;
     margin: 0 10px;
+    padding: 3px 4px;
     cursor: pointer;
   }
 

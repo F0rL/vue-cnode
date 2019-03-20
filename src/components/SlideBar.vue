@@ -1,13 +1,14 @@
 <template>
   <div class="autherinfo">
     <div class="authersummay">
-      <div>作者</div>
+      <div class="authorName">作者</div>
       <router-link :to="{name:'user_info',params:{name: userinfo.loginname}}">
         <img :src="userinfo.avatar_url" alt="">
+        <span>{{userinfo.loginname}}</span>
       </router-link>
     </div>
     <div class="recent_topics">
-      <div>作者最近主题</div>
+      <div class="authorName">作者最近主题</div>
       <ul>
         <li v-for="list in topicLimit">
           <router-link :to="{name:'post_content', params: {id: list.id, name:list.author.loginname}}">
@@ -17,7 +18,7 @@
       </ul>
     </div>
     <div class="recent_replies">
-      <div>作者最近回复</div>
+      <div class="authorName">作者最近回复</div>
       <ul>
         <li v-for="list in replyLimit">
           <router-link :to="{name:'post_content', params: {id: list.id, name:list.author.loginname}}">
@@ -72,13 +73,20 @@
   .authersummay, .recent_replies, .recent_topics {
     background-color: #fff;
   }
+  .authorName{
+    padding: 10px;
+    background-color: #f6f6f6;
+  }
   .autherinfo {
     width: 328px;
     float: right;
     margin-top: 0;
   }
   li{
-    padding: 3px 0 ;
+    padding: 10px 0 ;
+  }
+  li a :hover {
+    color: #00a2d4;
   }
   .recent_replies ul, .recent_topics ul {
     margin-top: 0px;
